@@ -76,7 +76,7 @@ PRs:
 - keep change size small and reviewable
 - squash merge only
 
-> TODO(human): apply branch protection settings for `main` in GitHub.
+`main` is protected by a repository ruleset; see the review policy in [CONTRIBUTING.md](CONTRIBUTING.md#required-review-policy).
 
 ## 6. Lifecycle
 
