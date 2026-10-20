@@ -380,7 +380,7 @@ If the dataset is solid and the analysis is disciplined, the project can evolve 
 
 These decisions should be revisited as the project moves forward:
 
-- Which public source will be used as the primary source of truth?
+- ~~Which public source will be used as the primary source of truth?~~ Resolved: the Greco1899 UFCStats CSV mirror; see [ADR 0002](docs/adr/0002-data-source.md).
 - What is the minimum historical range to include?
 - Do we require round-by-round stats for all fights or only recent data?
 - Are all divisions included from the start, or do we begin with a subset like lightweight, middleweight, or featherweight?

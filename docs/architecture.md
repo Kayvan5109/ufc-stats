@@ -20,7 +20,8 @@ ufc-stats/
 ├── docs/
 │   ├── adr/
 │   │   ├── 0000-template.md
-│   │   └── 0001-agent-workflow.md
+│   │   ├── 0001-agent-workflow.md
+│   │   └── 0002-data-source.md
 │   └── architecture.md
 ├── notebooks/
 ├── scripts/
@@ -73,4 +74,6 @@ ufc-stats/
 - Repo-level process rules live in [AGENTS.md](../AGENTS.md) and [CONTRIBUTING.md](../CONTRIBUTING.md).
 - Uncertain or evolving implementation decisions should be documented in an ADR under `docs/adr/`.
 
-> TODO(human): verify the exact final data source and pipeline architecture once source selection is locked in.
+## Data source
+
+The primary raw source is the [Greco1899/scrape_ufc_stats](https://github.com/Greco1899/scrape_ufc_stats) CSV mirror of UFCStats.com. Each snapshot is pinned to a source commit and stored under `data/raw/greco1899/<commit-date>_<sha7>/` with a `manifest.json`. See [ADR 0002](adr/0002-data-source.md) for the reasoning and the snapshot policy.
