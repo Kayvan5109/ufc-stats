@@ -106,6 +106,7 @@ These assumptions are intentionally lightweight and can be revised as the projec
 
 4. Fight statistics
    - significant strikes landed/attempted
+   - strikes laded/attempted
    - takedowns landed/attempted
    - submission attempts
    - control time
