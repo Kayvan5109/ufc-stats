@@ -36,15 +36,16 @@ Commit trailer:
 
 ## Required review policy
 
-Branch protection on `main` should require:
-- pull request required
-- 1 approving review
-- CI status checks passing
+`main` is protected by the `protect-main` repository ruleset, which enforces:
+- pull request required (no direct pushes to `main`)
+- 0 required approving reviews (see below)
+- required status check `validate (3.12)` from the CI workflow
 - branches up to date before merge
 - squash merge only
-- no direct pushes to `main`
+- no force pushes or branch deletion
+- repository admins may bypass, for emergencies only
 
-> TODO(human): apply branch protection settings in GitHub for `main`.
+Why 0 approvals: this repo has a single human owner, and agents act through the owner's GitHub identity. GitHub does not allow approving your own PR, so a required approval would block every merge. Instead, approval means the reviewer agent posts `VERDICT: APPROVE` as a PR comment (see [AGENTS.md](AGENTS.md#8-reviewer-checklist)) and the owner merges.
 
 ## Local workflow
 
