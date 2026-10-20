@@ -1,0 +1,10 @@
+# Default ownership for repository changes.
+# The owner should review high-risk or project-wide changes.
+
+* @Kayvan5109
+
+# High-risk paths require owner review.
+/.github/ @Kayvan5109
+/data/ @Kayvan5109
+/scripts/ @Kayvan5109
+/src/ @Kayvan5109

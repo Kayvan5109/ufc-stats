@@ -1,0 +1,82 @@
+name: Task
+description: Structured issue for a repo task or implementation request
+title: ""
+labels: ["status:ready"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why this task exists; link to the parent goal or ADR.
+      placeholder: Explain the problem or initiative.
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What needs to be done in 1-2 sentences.
+      placeholder: Describe the task.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Add a checklist with testable criteria.
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: Explicit exclusions for this issue.
+      placeholder: List out-of-scope items.
+    validations:
+      required: true
+
+  - type: textarea
+    id: likely_files
+    attributes:
+      label: Likely files
+      description: Pointers to the likely touch points for the work.
+      placeholder: List likely files/directories.
+    validations:
+      required: false
+
+  - type: input
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Blocked by issue number(s), if any.
+      placeholder: Blocked by #N
+    validations:
+      required: false
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      options:
+        - implementer
+        - tests
+        - docs
+        - refactor
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk
+      options:
+        - low
+        - high
+    validations:
+      required: true

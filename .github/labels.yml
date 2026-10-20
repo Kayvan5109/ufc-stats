@@ -1,0 +1,37 @@
+labels:
+  - name: role:impl
+    color: "0E8A16"
+    description: Implementation specialist work
+  - name: role:tests
+    color: "1D76DB"
+    description: Tests specialist work
+  - name: role:docs
+    color: "FBCA04"
+    description: Documentation specialist work
+  - name: role:refactor
+    color: "5319E7"
+    description: Refactor specialist work
+  - name: status:ready
+    color: "C2E0C6"
+    description: Unblocked and ready for dispatch
+  - name: status:in-progress
+    color: "D4C5F9"
+    description: Work is in progress
+  - name: status:in-review
+    color: "0052CC"
+    description: PR is approved for review
+  - name: status:blocked
+    color: "B60205"
+    description: Waiting on another issue or dependency
+  - name: needs-human
+    color: "D93F0B"
+    description: Requires owner decision or escalation
+  - name: risk:high
+    color: "B60205"
+    description: Requires owner review
+  - name: docs
+    color: "0075CA"
+    description: Documentation change
+  - name: chore
+    color: "EFEFEF"
+    description: Maintenance work

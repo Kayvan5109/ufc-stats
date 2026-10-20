@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.env
+.env.*
+*.sqlite
+*.db
+*.parquet
+*.csv
+# keep raw data local unless intentionally tracked
+/data/raw/
+/data/processed/
+reports/output/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Python tooling
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

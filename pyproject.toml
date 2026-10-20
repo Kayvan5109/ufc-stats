@@ -1,0 +1,32 @@
+[project]
+name = "ufc-stats"
+version = "0.1.0"
+description = "UFC fight and fighter analytics project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "pandas>=2.2",
+  "numpy>=2.0",
+  "matplotlib>=3.8",
+  "seaborn>=0.13",
+  "scikit-learn>=1.5",
+  "requests>=2.31",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.2",
+  "sqlalchemy>=2.0",
+  "duckdb>=1.0",
+  "jupyter>=1.0",
+  "ipykernel>=6.29",
+  "tqdm>=4.66",
+  "pytest>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
