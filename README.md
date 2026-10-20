@@ -56,6 +56,19 @@ cd C:\Users\khoob\Projects\ufc-stats
 .\.venv\Scripts\python.exe -m pytest
 ```
 
+## Getting the data
+
+Raw data comes from the [Greco1899/scrape_ufc_stats](https://github.com/Greco1899/scrape_ufc_stats) CSV mirror of UFCStats.com (see [ADR 0002](docs/adr/0002-data-source.md)). To download the latest snapshot:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\collect_data.py
+```
+
+This saves the six source CSVs and a `manifest.json` under `data/raw/greco1899/<commit-date>_<sha7>/`:
+
+- Each snapshot is pinned to one upstream commit. Re-running when nothing upstream has changed does nothing.
+- If any file's columns differ from what the code expects, the download fails and saves nothing.
+
 ## Project workflow
 
 1. Use public fight data sources only unless a legal paid source is later approved.

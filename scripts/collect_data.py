@@ -1,19 +1,24 @@
+"""Download the latest Greco1899 UFCStats CSV snapshot into data/raw/greco1899/."""
+
 from __future__ import annotations
 
-from pathlib import Path
+import json
 
-from ufc_stats.config import PROJECT_ROOT, RAW_DATA_DIR
+import requests
+
+from ufc_stats.ingest.greco import MANIFEST_NAME, download_snapshot
 
 
 def main() -> None:
-    """Placeholder script for future ingestion work.
+    with requests.Session() as session:
+        session.headers["User-Agent"] = "ufc-stats-research (+https://github.com/Kayvan5109/ufc-stats)"
+        snapshot_dir = download_snapshot(session)
 
-    This is intentionally minimal to preserve a clean structure while the project
-    data source strategy is being finalized.
-    """
-    print(f"Project root: {PROJECT_ROOT}")
-    print(f"Raw data directory: {RAW_DATA_DIR}")
-    print("Data collection entry point is ready for implementation.")
+    manifest = json.loads((snapshot_dir / MANIFEST_NAME).read_text(encoding="utf-8"))
+    print(f"Snapshot: {snapshot_dir}")
+    print(f"Source:   {manifest['source_repo']} @ {manifest['commit_sha'][:7]} ({manifest['commit_date']})")
+    for entry in manifest["files"]:
+        print(f"  {entry['name']:<26} {entry['bytes']:>12,} bytes")
 
 
 if __name__ == "__main__":
